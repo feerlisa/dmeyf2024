@@ -7,7 +7,7 @@ require("rpart")
 require("rpart.plot")
 
 # Aqui se debe poner la carpeta de la materia de SU computadora local
-setwd("~/buckets/b1") # Establezco el Working Directory
+setwd("C:/Users/ferna/OneDrive/_Maestria/2do_Cuatri/DMEF") # Establezco el Working Directory
 
 # cargo el dataset que tiene la clase calculada !
 dataset <- fread("./datasets/competencia_01.csv")
