@@ -7,7 +7,7 @@ require("data.table")
 require("lightgbm")
 
 
-348# defino los parametros de la corrida, en una lista, la variable global  PARAM
+# defino los parametros de la corrida, en una lista, la variable global  PARAM
 PARAM <- list()
 PARAM$experimento <- "KA4210"
 
@@ -48,7 +48,7 @@ dataset[, clase01 := ifelse(clase_ternaria %in% c("BAJA+2", "BAJA+1"), 1L, 0L)]
 #--------------------------------------
 
 # los campos que se van a utilizar
-campos_buenos <- setdiff(colnames(dataset), c("clase_ternaria", "clase01"))
+campos_buenos <- setdiff(colnames(dataset), c("clase_ternaria", "clase01", "cprestamos_personales","mprestamos_personales"))
 
 #--------------------------------------
 

@@ -35,14 +35,14 @@ options(error = function() {
 PARAM <- list()
 
 PARAM$semilla_primigenia <- 878777
-PARAM$experimento <- "HT4220"
+PARAM$experimento <- "HT4220lag"
 
-PARAM$input$dataset <- "./datasets/competencia_01.csv"
+PARAM$input$dataset <- "./datasets/competencia_01_lag1.csv"
 PARAM$input$training <- c(202104) # los meses en los que vamos a entrenar
 
 # un undersampling de 0.1  toma solo el 10% de los CONTINUA
 # undersampling de 1.0  implica tomar TODOS los datos
-PARAM$trainingstrategy$undersampling <- 1.0
+PARAM$trainingstrategy$undersampling <- 1
 
 PARAM$hyperparametertuning$iteraciones <- 150
 PARAM$hyperparametertuning$xval_folds <- 5
@@ -259,7 +259,7 @@ dataset[
 # los campos que se van a utilizar
 campos_buenos <- setdiff(
   colnames(dataset),
-  c("clase_ternaria", "clase01", "azar", "training")
+  c("clase_ternaria", "clase01", "azar", "training", "cprestamos_personales","mprestamos_personales")
 )
 
 # defino los datos que forma parte del training
