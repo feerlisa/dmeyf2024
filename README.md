@@ -1,1 +1,1 @@
-Experimento 1: Corri 723, 724 y 725
+Competencia 1: Corri 723, 724 y 725
