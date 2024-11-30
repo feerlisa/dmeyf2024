@@ -265,10 +265,10 @@ TS_strategy_base8 <- function( pinputexps )
 
   param_local$future <- c(202109)
 
-  param_local$final_train$undersampling <- 0.02
+  param_local$final_train$undersampling <- 0.08
   param_local$final_train$clase_minoritaria <- c( "BAJA+1", "BAJA+2")
   param_local$final_train$training <- c(202107,
-    202106, 202105, 202104, 202103, 202102, 202101, 
+    202106, 202105, 202102, 202101, 
     202012, 202011, 202010, 202009, 202008, 202007, 
     # 202006  Excluyo por variables rotas
     202005, 202002, 202001,
@@ -283,8 +283,7 @@ TS_strategy_base8 <- function( pinputexps )
   param_local$train$testing <- c(202107)
   param_local$train$validation <- c(202106)
 
-  param_local$train$training <- c(202105,
-    202104, 202103, 202102, 202101, 
+  param_local$train$training <- c(202105, 202102, 202101, 
     202012, 202011, 202010, 202009, 202008, 202007, 
     # 202006  Excluyo por variables rotas
     202005, 202002, 202001,
@@ -298,7 +297,7 @@ TS_strategy_base8 <- function( pinputexps )
 
   # Atencion  0.2  de  undersampling de la clase mayoritaria,  los CONTINUA
   # 1.0 significa NO undersampling
-  param_local$train$undersampling <- 0.02
+  param_local$train$undersampling <- 0.08
   param_local$train$clase_minoritaria <- c( "BAJA+1", "BAJA+2")
 
   return( exp_correr_script( param_local ) ) # linea fija
@@ -445,7 +444,7 @@ KA_evaluate_kaggle_semillerio <- function( pinputexps )
 # Que predice 202107 donde conozco la clase
 # y ya genera graficos
 
-c3k08 <- function( pnombrewf )
+c32 <- function( pnombrewf )
 {
   param_local <- exp_wf_init( pnombrewf ) # linea fija
 
@@ -464,7 +463,7 @@ c3k08 <- function( pnombrewf )
   # la Bayesian Optimization con el semillerio dentro
   ht <- HT_tuning_semillerio(
     semillerio = 50, # semillerio dentro de la Bayesian Optim
-    bo_iteraciones = 15  # iteraciones inteligentes, apenas 10
+    bo_iteraciones = 25  # iteraciones inteligentes, apenas 10
   )
 
 
@@ -486,6 +485,6 @@ c3k08 <- function( pnombrewf )
 # Aqui comienza el programa
 
 # llamo al workflow con future = 202108
-c3k08()
+c32()
 
 
